@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6ewamxx8sljb"]
+
+[ext_resource type="Texture2D" uid="uid://cndwckhiqdug2" path="res://Assets/boss2.png" id="1_hscgr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4s3v"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cxhg"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21n1j"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqeen"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4np8w"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlc1l"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48hnf"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8trkr"]
+atlas = ExtResource("1_hscgr")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdwya"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4s3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cxhg")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21n1j")
+}],
+"loop": true,
+"name": &"DeadNormal",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqeen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4np8w")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlc1l")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48hnf")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8trkr")
+}],
+"loop": true,
+"name": &"Prepare",
+"speed": 60.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kvow"]
+size = Vector2(15, 15.5)
+
+[node name="Jack" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rdwya")
+animation = &"Attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_5kvow")
+
+[node name="Fire_Container" type="Node2D" parent="."]
+position = Vector2(0, 0.25)

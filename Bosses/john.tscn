@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://be3spwufdclww"]
+
+[ext_resource type="Texture2D" uid="uid://cndwckhiqdug2" path="res://Assets/boss2.png" id="1_uil3h"]
+[ext_resource type="Script" path="res://Bosses/Rewind/StateMachine.gd" id="2_lggqo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kem1"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b61n7"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmojv"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkww5"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8445j"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3clb"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5ksk"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a200t"]
+atlas = ExtResource("1_uil3h")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hviwf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kem1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b61n7")
+}],
+"loop": false,
+"name": &"Attacking",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmojv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkww5")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8445j")
+}],
+"loop": true,
+"name": &"DeadNormal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3clb")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5ksk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a200t")
+}],
+"loop": true,
+"name": &"Running",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpo8k"]
+size = Vector2(15, 15.5)
+
+[node name="John" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hviwf")
+animation = &"DeadNormal"
+
+[node name="Slash_Container" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_dpo8k")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_lggqo")

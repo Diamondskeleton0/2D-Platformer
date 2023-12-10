@@ -1,0 +1,223 @@
+[gd_scene load_steps=27 format=3 uid="uid://ca3j3susj4mts"]
+
+[ext_resource type="Script" path="res://Bosses/Rewind/rewind.gd" id="1_82pry"]
+[ext_resource type="Texture2D" uid="uid://bkpr66ionbjba" path="res://Assets/boss1.png" id="2_so0jp"]
+[ext_resource type="Script" path="res://Bosses/Rewind/StateMachine.gd" id="3_3i7ty"]
+[ext_resource type="Script" path="res://Bosses/Rewind/Jump.gd" id="4_4fv0y"]
+[ext_resource type="Script" path="res://Bosses/Rewind/Idle.gd" id="4_8hrp1"]
+[ext_resource type="Script" path="res://Bosses/Rewind/Run.gd" id="5_7q0ro"]
+[ext_resource type="Script" path="res://Bosses/Rewind/Sprint.gd" id="6_6hmpu"]
+[ext_resource type="Script" path="res://Bosses/Rewind/Dead.gd" id="8_mkiig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbt5a"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvup3"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asdka"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srloi"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8lus"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0hh4"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akegr"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaji2"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w038p"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmyjm"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcuvx"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmcgo"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjs7j"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rf2y"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35jwa"]
+atlas = ExtResource("2_so0jp")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lwcj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbt5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvup3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asdka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srloi")
+}],
+"loop": true,
+"name": &"Charge",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8lus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0hh4")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akegr")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaji2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w038p")
+}],
+"loop": true,
+"name": &"IdleAir",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmyjm")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcuvx")
+}],
+"loop": true,
+"name": &"JumpLight",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmcgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjs7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rf2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35jwa")
+}],
+"loop": true,
+"name": &"Move",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh87h"]
+size = Vector2(15, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfy53"]
+size = Vector2(30, 31)
+
+[node name="Rewind" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_82pry")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0lwcj")
+animation = &"Jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_vh87h")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_3i7ty")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_8hrp1")
+
+[node name="waitTime" type="Timer" parent="StateMachine/Idle"]
+one_shot = true
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("5_7q0ro")
+
+[node name="Sprint" type="Node" parent="StateMachine"]
+script = ExtResource("6_6hmpu")
+
+[node name="chargeTime" type="Timer" parent="StateMachine/Sprint"]
+one_shot = true
+
+[node name="coolTime" type="Timer" parent="StateMachine/Sprint"]
+one_shot = true
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("4_4fv0y")
+
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("8_mkiig")
+
+[node name="Hitbox" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_sfy53")
+
+[node name="invincibleTime" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="StateMachine/Idle/waitTime" to="StateMachine/Idle" method="_on_wait_time_timeout"]
+[connection signal="timeout" from="StateMachine/Sprint/chargeTime" to="StateMachine/Sprint" method="_on_charge_time_timeout"]
+[connection signal="timeout" from="StateMachine/Sprint/coolTime" to="StateMachine/Sprint" method="_on_cool_time_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="invincibleTime" to="." method="_on_invincible_time_timeout"]

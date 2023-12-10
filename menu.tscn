@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://h2c4c5nqwhyq"]
+
+[ext_resource type="Texture2D" uid="uid://cuj6mvfiydd60" path="res://Assets/manuBg.png" id="1_pn1ta"]
+[ext_resource type="Script" path="res://menu.gd" id="1_we0hj"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_we0hj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -345.0
+offset_top = 90.0
+offset_right = 119.0
+offset_bottom = 399.0
+rotation = -0.321554
+scale = Vector2(3.30329, 3.30329)
+texture = ExtResource("1_pn1ta")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+scale = Vector2(30.1849, 16.8615)
+color = Color(0, 0, 0, 0.294118)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 135.0
+offset_right = 513.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 12
+text = "The valley presents:"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 137.0
+offset_right = 676.0
+offset_bottom = 223.0
+theme_override_font_sizes/font_size = 60
+text = "Boss Rush
+"
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 387.0
+offset_right = 137.0
+offset_bottom = 418.0
+text = "Start
+"
+
+[node name="Start2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 475.0
+offset_right = 181.0
+offset_bottom = 506.0
+text = "Wimp Out
+"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Start2" to="." method="_on_start_2_pressed"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdwcmlgnhnhs2"]
+
+[ext_resource type="Script" path="res://lever.gd" id="1_1o47m"]
+[ext_resource type="Texture2D" uid="uid://b86ssqxmww4ee" path="res://Assets/leverOff.png" id="1_hwynp"]
+[ext_resource type="Texture2D" uid="uid://7fg6mjr8yje7" path="res://Assets/leverOn.png" id="2_utxm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3cf2"]
+size = Vector2(32, 32)
+
+[node name="Lever" type="Node2D"]
+script = ExtResource("1_1o47m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_t3cf2")
+
+[node name="Off" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_hwynp")
+
+[node name="On" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_utxm2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

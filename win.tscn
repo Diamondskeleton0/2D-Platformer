@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://b23huu0rvtxwf"]
+
+[ext_resource type="Script" path="res://win.gd" id="1_00eum"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_00eum")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -17.0
+offset_right = 22.0
+offset_bottom = 23.0
+scale = Vector2(29.56, 16.88)
+color = Color(0, 0, 0, 0.231373)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 532.0
+offset_right = 123.0
+offset_bottom = 563.0
+text = "Okay
+"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 460.0
+offset_right = 214.0
+offset_bottom = 491.0
+text = "I wanna go again
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 116.0
+offset_right = 1049.0
+offset_bottom = 202.0
+theme_override_font_sizes/font_size = 60
+text = "You are win!!!!!11!!1!1!!!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

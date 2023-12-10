@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dosb02b645gw7"]
+
+[ext_resource type="Texture2D" uid="uid://bn85g3a0oby4c" path="res://Assets/slash1.png" id="1_dvnsj"]
+[ext_resource type="Texture2D" uid="uid://dgjsfpgr6t7mf" path="res://Assets/slash2.png" id="2_u7x35"]
+[ext_resource type="Texture2D" uid="uid://c3isju47pbjnb" path="res://Assets/slash3.png" id="3_mlonb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l0w2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dvnsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u7x35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mlonb")
+}],
+"loop": true,
+"name": &"Slash",
+"speed": 12.0
+}]
+
+[node name="Slash" type="StaticBody2D"]
+position = Vector2(-16, 0)
+
+[node name="SlashAnimation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_l0w2j")
+animation = &"Slash"
+frame = 1
+frame_progress = 0.947359
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-15, 0, -12, 4, -2, 7, 10, 8, 10, -8, -2, -7, -12, -4)

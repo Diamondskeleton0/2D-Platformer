@@ -1,0 +1,271 @@
+[gd_scene load_steps=23 format=3 uid="uid://bq3m24y5bjxe7"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_86ora"]
+[ext_resource type="Texture2D" uid="uid://ccnyqpxsmmhgv" path="res://Player/playerAttack.png" id="2_5cje1"]
+[ext_resource type="Texture2D" uid="uid://6akgpos4htax" path="res://Player/playerSpritesNeon.png" id="2_ggguj"]
+[ext_resource type="Texture2D" uid="uid://bgdygluo0lqet" path="res://Player/playerFall.png" id="3_x4ago"]
+[ext_resource type="Texture2D" uid="uid://but380hdc7wof" path="res://Player/playerIdle.png" id="4_onjkl"]
+[ext_resource type="Texture2D" uid="uid://drgq2pcd8f8lc" path="res://Player/playerIdleAir.png" id="5_ci35q"]
+[ext_resource type="Texture2D" uid="uid://1sdjou3tuaq4" path="res://Player/playerJump.png" id="6_kw3fj"]
+[ext_resource type="Texture2D" uid="uid://bi5sw1dsoi1vw" path="res://Player/playerJumpLight.png" id="7_jg850"]
+[ext_resource type="Texture2D" uid="uid://dpg5q5j6na8i1" path="res://Player/playerRun1.png" id="8_nlvhu"]
+[ext_resource type="Texture2D" uid="uid://djksvwsv81gdj" path="res://Player/playerRun2.png" id="9_cles8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2w21"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akys5"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddwm8"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23ffk"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmrwo"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tms34"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_immqp"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5ilp"]
+atlas = ExtResource("2_ggguj")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_482e6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5cje1")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2w21")
+}],
+"loop": true,
+"name": &"AttackNeon",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x4ago")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akys5")
+}],
+"loop": false,
+"name": &"FallNeon",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_onjkl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ci35q")
+}],
+"loop": true,
+"name": &"IdleAir",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddwm8")
+}],
+"loop": true,
+"name": &"IdleAirNeon",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23ffk")
+}],
+"loop": false,
+"name": &"IdleNeon",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_kw3fj")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jg850")
+}],
+"loop": true,
+"name": &"JumpLight",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmrwo")
+}],
+"loop": true,
+"name": &"JumpLightNeon",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tms34")
+}],
+"loop": false,
+"name": &"JumpNeon",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nlvhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cles8")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_immqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5ilp")
+}],
+"loop": true,
+"name": &"RunNeon",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o54pf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2w21")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akys5")
+}],
+"loop": false,
+"name": &"Fall",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23ffk")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddwm8")
+}],
+"loop": true,
+"name": &"IdleAir",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tms34")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmrwo")
+}],
+"loop": true,
+"name": &"JumpLight",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_immqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5ilp")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyk8b"]
+size = Vector2(14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8i5r"]
+size = Vector2(8, 12)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 2
+scale = Vector2(2, 2)
+script = ExtResource("1_86ora")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_482e6")
+animation = &"Idle"
+
+[node name="AnimationNeon" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_o54pf")
+animation = &"Run"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jyk8b")
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HitCollider" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitCollider"]
+position = Vector2(9.5, 0.5)
+shape = SubResource("RectangleShape2D_s8i5r")
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
