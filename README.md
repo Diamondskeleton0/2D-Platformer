@@ -8,13 +8,16 @@ Made with Godot 4
 
 ## What Makes this a Game?
 
-You can jump around, jump around!
+You can KILL
+you can also move using your momentum and your punch!
 
 ## References
 
+troll face
+
 ## Future Development
 
-An actual game
+maybe?
 
 ## Created by
 
